@@ -1,6 +1,8 @@
-* { box-sizing: border-box
+* { box-sizing: border-box;
 }
-html, body { width: 100% }
+html, body { width: 100%; }
+
+img{ width: 100%;}
 
 #etsy {
     height: 50px;
@@ -42,6 +44,31 @@ ul > h5 {
 .strong {
     padding-left: 25px;
 }
+.text-muted {
+  font-size: 12px;
+}
+
+.card {
+  background: white;
+  padding: 10px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  height: 230px;
+  border-radius: 2px;
+  margin-bottom: 30px;
+}
+.card img {
+  height: 150px;
+  padding-bottom: 10px;
+}
+
+.card span {
+    display: inline-block;
+    margin-bottom: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
 
 #emailBar {
     padding-left: 450px;
@@ -53,4 +80,11 @@ ul > h5 {
 .row-bottom {
     border-top: 1px solid rgba(208, 205, 201, 0.6);
     padding-top: 15px;
+}
+.left-col {
+    padding-left: 120px;
+}
+
+.right-col {
+    padding-right: 100px;
 }

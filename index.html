@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Stylesheets go here. -->
+  <script src="https://use.fontawesome.com/9df289b211.js"></script>
   <script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" />
@@ -19,9 +20,9 @@
       </div>
       <div class="col-sm-5">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="board games">
+        <input id="searchInput" type="text" class="form-control" placeholder="board games">
         <span class="input-group-btn">
-          <button class="btn btn-primary" type="button">
+          <button id="searchButton" class="btn btn-primary" type="button">
             Search
           </button>
         </span>
@@ -68,29 +69,40 @@
     <h5>Refine your search</h5>
     <ul>
       <h5>Shop location</h5>
-      <div class="input-group">
-      <span class="input-group-addon">
-        <input type="radio" aria-label="...">
-      </span>
-      <li><a href="#" class=" strong text-gray">Anywhere</a></li>
-    </div>
-      <div class="input-group">
-      <span class="input-group-addon">
-        <input type="radio" aria-label="...">
-      </span>
-      <li><a href="#" class=" strong text-gray is-touch">United States</a></li>
-    </div>
-    <span><a href="#" class=" strong text-gray is-touch">Choose a custom location</a></span>
+      <li class="list-unstyled">
+        <input type="radio"/>
+        <a href="#" class="radio-label is-touch">Anywhere</a>
+      </li>
+      <li class="list-unstyled">
+        <input type="radio"/>
+        <a href="#" class="radio-label is-touch">United States</a>
+      </li>
+    <li class="list-unstyled">
+      <a href="#" class="radio-label is-touch">Choose a custom location</a>
+    </li>
     <hr />
     <h5>Item type</h5>
-    <li>
+    <li class="list-unstyled">
       <input type="radio"/>
       <a href="#" class="radio-label is-touch">All items</a>
+    </li>
+    <li class="list-unstyled">
+      <input type="radio"/>
+      <a href="#" class="radio-label is-touch">Handmade</a>
+    </li>
+    <li class="list-unstyled">
+      <input type="radio"/>
+      <a href="#" class="radio-label is-touch">Vintage</a>
+    </li>
+    <hr />
+    <h5>Price ($)</h5>
+    <li>
+
     </li>
     </ul>
   </div>
   <div class="col-sm-9">
-    <div id="searchResults" class="row">
+    <div id="searchResults">
 
     </div>
   </div>
@@ -105,50 +117,51 @@
     </div>
   </div>
   <div class="row row-bottom">
-    <div class="col-sm-3">
+    <div class="col-sm-3 left-col">
       <h4>Turn your passion into a business</h4>
       <span class="input-group-btn">
         <button class="btn btn-primary" type="button">Open a shop</button>
       </span>
       <h5>Sell on Etsy</h5>
-      <span>Open a shop</span><br />
-      <span>Seller Handbook</span><br />
-      <span>Etsy credit card reader</span><br />
-      <span>Manufacturing</span><br />
+      <span class="strong text-gray-darker"><a>Open a shop</a></span><br />
+      <span class="strong text-gray-darker"><a>Seller Handbook</a></span><br />
+      <span class="strong text-gray-darker"><a>Etsy credit card reader</a></span><br />
+      <span class="strong text-gray-darker"><a>Manufacturing</a></span><br />
     </div>
     <div class="col-sm-2">
       <h4>Join the community</h4>
-      <span>Teams</span><br />
-      <span>Forums</span><br />
-      <span>Upcoming Events</span><br />
-      <span>Affiliates</span><br />
-      <span>Etsy Local</span><br />
+      <span class="strong text-gray-darker"><a>Teams</a></span><br />
+      <span class="strong text-gray-darker"><a>Forums</a></span><br />
+      <span class="strong text-gray-darker"><a>Upcoming Events</a></span><br />
+      <span class="strong text-gray-darker"><a>Affiliates</a></span><br />
+      <span class="strong text-gray-darker"><a>Etsy Local</a></span><br />
     </div>
     <div class="col-sm-2">
       <h4>Discover and shop</h4>
-      <span>Gift Cards</span><br />
-      <span>Blog</span><br />
-      <span>Mobile Apps</span><br />
-      <span>Gidt registries</span><br />
-      <span>Wholesale</span><br />
-      <span>Search</span><br />
-      <span>Editors' picks</span><br />
+      <span class="strong text-gray-darker"><a>Gift Cards</a></span><br />
+      <span class="strong text-gray-darker"><a>Blog</a></span><br />
+      <span class="strong text-gray-darker"><a>Mobile Apps</a></span><br />
+      <span class="strong text-gray-darker"><a>Gidt registries</a></span><br />
+      <span class="strong text-gray-darker"><a>Wholesale</a></span><br />
+      <span class="strong text-gray-darker"><a>Search</a></span><br />
+      <span class="strong text-gray-darker"><a>Editors' picks</a></span><br />
     </div>
     <div class="col-sm-2">
       <h4>Get to know us</h4>
-      <span>About</span><br />
-      <span>Policies</span><br />
-      <span>Careers</span><br />
-      <span>Press</span><br />
-      <span>Developers</span><br />
-      <span>Investors</span><br />
+      <span class="strong text-gray-darker"><a>About</a></span><br />
+      <span class="strong text-gray-darker"><a>Policies</a></span><br />
+      <span class="strong text-gray-darker"><a>Careers</a></span><br />
+      <span class="strong text-gray-darker"><a>Press</a></span><br />
+      <span class="strong text-gray-darker"><a>Developers</a></span><br />
+      <span class="strong text-gray-darker"><a>Investors</a></span><br />
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-3 right-col">
       <h4>Follow Etsy</h4>
-      <span class="glyphicon glyphicon-star" aria-hidden="true">Facebook</span><br />
-      <span class="glyphicon glyphicon-star" aria-hidden="true">Twitter</span><br />
-      <span class="glyphicon glyphicon-star" aria-hidden="true">Pinterest</span><br />
-      <span class="glyphicon glyphicon-star" aria-hidden="true">Instagram</span><br />
+      <span class="fa fa-facebook" aria-hidden="true"> Facebook</span><br />
+      <span class="fa fa-twitter" aria-hidden="true"> Twitter</span><br />
+      <span class="fa fa-pinterest-p" aria-hidden="true"> Pinterest</span><br />
+      <i class="fa fa-instagram" aria-hidden="true"> Instagram</i>
+<br />
     </div>
 
   </>
